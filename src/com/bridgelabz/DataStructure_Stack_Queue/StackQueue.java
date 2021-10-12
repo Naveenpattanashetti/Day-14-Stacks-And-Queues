@@ -39,4 +39,22 @@ public class StackQueue {
 		}
 
 	}
+
+	public void queue(int data) {
+		Node newnode = new Node(data);
+		if (head == null) {
+			head = newnode;
+			tail = newnode;
+			top = head;
+		} else {
+			Node tempNode = tail;
+			this.tail = newnode;
+			tempNode.next = tail;
+		}
+	}
+
+	public int peek() {
+		System.out.println("\nTop element is " + this.top.data);
+		return top.data;
+	}
 }
